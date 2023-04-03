@@ -1,0 +1,123 @@
+/*====================
+    VARIABLES
+====================*/
+/*====================
+    END VARIABLES
+====================*/
+/*====================
+    STYLES
+====================*/
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap");
+/* Reset */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 10px; }
+
+body {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #303b5a;
+  box-sizing: border-box;
+  height: 100vh; }
+  @media only screen and (min-width: 720px) {
+    body {
+      display: grid;
+      place-items: center; } }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  overflow: hidden; }
+  .main > * {
+    flex: 1; }
+  @media only screen and (min-width: 720px) {
+    .main {
+      flex-direction: row;
+      max-width: 70rem;
+      margin: 2rem;
+      box-shadow: 5px 5px 2rem rgba(46, 43, 233, 0.2);
+      border-radius: 3rem; } }
+  .main .result {
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    padding: 5rem;
+    color: #c8c7ff;
+    background-image: linear-gradient(to bottom, #7857ff, #2e2be9);
+    text-align: center;
+    border-radius: 0 0 3rem 3rem; }
+    @media only screen and (min-width: 720px) {
+      .main .result {
+        border-radius: 0 3rem 3rem 0; } }
+    .main .result__total {
+      padding: 2rem;
+      width: 14rem;
+      aspect-ratio: 1;
+      border-radius: 99px;
+      background-image: linear-gradient(to bottom, #4e21ca, rgba(36, 33, 202, 0)); }
+      @media only screen and (min-width: 720px) {
+        .main .result__total {
+          padding: 4rem;
+          width: 18rem; } }
+    .main .result__score {
+      font-size: 6rem;
+      font-weight: 700;
+      color: white; }
+      .main .result__score-total {
+        opacity: .5; }
+    .main .result__rating {
+      font-size: 2.4rem;
+      font-weight: 500;
+      color: white; }
+    .main .result__sub-title {
+      margin-top: 1rem;
+      font-size: 1.6rem; }
+  .main .summary {
+    padding: 3rem; }
+    .main .summary--cards {
+      margin: 2rem 0; }
+    .main .summary__item {
+      display: flex;
+      gap: 1rem;
+      border-radius: 1rem;
+      padding: 1.4rem; }
+      .main .summary__item.Reaction {
+        color: #ff5757;
+        background: rgba(255, 87, 87, 0.08); }
+      .main .summary__item.Memory {
+        color: #ffb01f;
+        background: rgba(255, 176, 31, 0.08); }
+      .main .summary__item.Verbal {
+        color: #00bd91;
+        background: rgba(0, 189, 145, 0.08); }
+      .main .summary__item.Visual {
+        color: #1125d4;
+        background: rgba(17, 37, 212, 0.08); }
+      .main .summary__item-score {
+        color: #303b5a;
+        margin-left: auto;
+        font-weight: 500; }
+        .main .summary__item-score span {
+          opacity: .5; }
+      .main .summary__item:not(:last-child) {
+        margin-bottom: 1.4rem; }
+    .main .summary__btn {
+      all: unset;
+      display: grid;
+      place-items: center;
+      width: -webkit-fill-available;
+      color: #ebf1ff;
+      background: #303b5a;
+      border-radius: 99px;
+      padding: 1.6rem;
+      cursor: pointer; }
+      .main .summary__btn:hover {
+        background-image: linear-gradient(to bottom, #7857ff, #2e2be9); }

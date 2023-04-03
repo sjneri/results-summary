@@ -1,0 +1,186 @@
+/*====================
+    VARIABLES
+====================*/
+// PRIMARY
+$red: rgb(255, 87, 87);
+$yellow: rgb(255, 176, 31);
+$green: rgb(0, 189, 145);
+$blue: rgb(17, 37, 212);
+
+// GRADIENT
+$blue-slate: hsl(252, 100%, 67%);
+$blue-royal: hsl(241, 81%, 54%);
+
+$blue-violet: hsla(256, 72%, 46%, 1);
+$blue-persian: hsla(241, 72%, 46%, 0);
+
+// NEUTRAL
+$white: hsl(0, 0%, 100%);
+$pale-blue: hsl(221, 100%, 96%);
+$lite-lavender: hsl(241, 100%, 89%);
+$darkGray-blue: hsl(224, 30%, 27%);
+
+
+$font-default: 1.8rem;
+$font-xl: 6rem;
+$font-lg: 2.4rem;
+$font-md: 1.6rem;
+$font-sm: 1.4rem;
+$font-xs: 1rem;
+
+// $width: 4.5rem;
+// $height: 2.7rem;
+
+$bp-sm: 720px;
+/*====================
+    END VARIABLES
+====================*/
+
+/*====================
+    STYLES
+====================*/
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+/* Reset */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: $font-default;
+  font-weight: 500;
+  color: $darkGray-blue;
+  box-sizing: border-box;
+  height: 100vh;
+
+  @media only screen and (min-width: 720px) {
+    display: grid;
+    place-items: center;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+
+  background: $white;
+  overflow: hidden;
+
+  > * {
+    flex: 1;
+  }
+
+  @media only screen and (min-width: 720px) {
+    flex-direction: row;
+    max-width: 70rem;
+    margin: 2rem;
+    box-shadow: 5px 5px 2rem rgba($blue-royal, 0.2);
+    border-radius: 3rem;
+  }
+
+  .result {
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    padding: 5rem;
+
+    color: $lite-lavender;
+    background-image: linear-gradient(to bottom, $blue-slate, $blue-royal);
+    text-align: center;
+    border-radius: 0 0 3rem 3rem;
+
+    @media only screen and (min-width: 720px) {
+      border-radius: 0 3rem 3rem 0;
+    }
+
+    &__total {
+      padding: 2rem;
+      width: 14rem;
+      aspect-ratio: 1;
+      border-radius: 99px;
+      background-image: linear-gradient(to bottom, $blue-violet, $blue-persian);
+
+      @media only screen and (min-width: 720px) {
+        padding: 4rem;
+        width: 18rem;
+      }
+    }
+
+    &__score {
+      font-size: $font-xl;
+      font-weight: 700;
+      color: $white;
+      
+      &-total {
+        opacity: .5;
+      }
+    }
+
+    &__rating {
+      font-size: $font-lg;
+      font-weight: 500;
+      color: $white;
+    }
+
+    &__sub-title {
+      margin-top: 1rem;
+      font-size: $font-md;
+    }
+  }
+
+  .summary {
+    padding: 3rem;
+    &--cards {
+      margin: 2rem 0;
+    }
+
+    &__item {
+      display: flex;
+      gap: 1rem;
+      border-radius: 1rem;
+      padding: 1.4rem;
+
+      &.Reaction { $base: $red; color: $base; background: rgba($base, .08); }
+      &.Memory { $base: $yellow; color: $base; background: rgba($base, .08); }
+      &.Verbal { $base: $green; color: $base; background: rgba($base, .08); }
+      &.Visual { $base: $blue; color: $base; background: rgba($base, .08); }
+
+      &-score {
+        color: $darkGray-blue;
+        margin-left: auto;
+        font-weight: 500;
+
+        span { opacity: .5; }
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1.4rem;
+      }
+    }
+
+    &__btn {
+      all: unset;
+      display: grid;
+      place-items: center;
+      width: -webkit-fill-available;
+      color: $pale-blue;
+      background: $darkGray-blue;
+      border-radius: 99px;
+      padding: 1.6rem;
+      cursor: pointer;
+
+      &:hover {
+        background-image: linear-gradient(to bottom, $blue-slate, $blue-royal);
+      }
+    }
+  }
+}
