@@ -7,7 +7,7 @@ const summary = data;
 const summaryList = summary.reduce((listItem, item) => {
   listItem += `
     <div class="summary__item ${item.category}">
-      <img src="/assets/images/icon-${item.category}.svg" alt="Reaction">
+      <img src="./assets/images/i-${item.category}.svg" alt="${item.category}">
       <p class="summary__item-label">${item.category}</p>
       <p class="summary__item-score">
         ${item.score}
